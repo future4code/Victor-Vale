@@ -1,5 +1,5 @@
-Boas-vindas!
-
+# Boas-vindas!
+## opa
 Esse repositório vai acompanhar vocês até o final do curso, para mantermos a organização, sugerimos que vocês sigam a seguinte estrutura:
 
 ```
@@ -26,7 +26,9 @@ Esse repositório vai acompanhar vocês até o final do curso, para mantermos a 
 │   ├── nome-da-aula
 │   └── nome-do-projeto
 |
-.
+. testestestestes 
+
 ```
 
 Uma pasta para cada módulo, dentro delas uma pasta para cada dia de aula colocando o nome da aula e por fim uma pasta para cada projeto de fixação com o nome do projeto. Os nomes de cada aula e projeto estarão especificados nas instruções de git de cada exercício.
+aiaia
