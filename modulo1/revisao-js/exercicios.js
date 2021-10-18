@@ -4,6 +4,7 @@
 
 
 // EXERCÍCIO 01
+
 const array = ["verde", "azul", "amarelo"]
 function retornaTamanhoArray(array) {
     const tamanho = array.length
@@ -67,10 +68,22 @@ function retornaNumerosParesElevadosADois(array) {
 }
 console.log(retornaNumerosParesElevadosADois(array))
 
+
 // EXERCÍCIO 06
+const array = [33, 45, 1, 2, 7, 101, 26]
 function retornaMaiorNumero(array) {
-  
+    let i = 0
+    let maior = array[0]
+    while (i < array.length){
+        if(maior < array[i]){
+            maior = array[i]
+        }
+        i++
+    }
+  return maior 
 }
+const numero = retornaMaiorNumero(array)
+console.log(numero)
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
