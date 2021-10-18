@@ -24,16 +24,27 @@ const numero1 = retornaArrayInvertido(array)
 console.log(numero1)
 
 // EXERCÍCIO 03
+
+const array = [6, 5, 4, 3, 2, 1]
 function retornaArrayOrdenado(array) {
+    const ordenado = array.sort()
+    return ordenado
+}
+console.log(retornaArrayOrdenado(array))
     
-}
-
-
 // EXERCÍCIO 04
-function retornaNumerosPares(array) {
- 
-
+const array = [1, 2, 3, 4, 5, 6, 7, 8]
+function retornaNumerosPares(array) {    
+    const arrayPar = []
+    for (let i=0; i<array.length; i++){
+        if(array[i] %2 === 0){
+            arrayPar = array[i]
+        }
+    }   
+    return arrayPar 
 }
+console.log(retornaNumerosPares(array))
+
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
