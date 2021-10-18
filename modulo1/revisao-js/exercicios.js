@@ -25,12 +25,14 @@ console.log(numero1)
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
-  
+    
 }
+
 
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-  
+ 
+
 }
 
 // EXERCÍCIO 05
