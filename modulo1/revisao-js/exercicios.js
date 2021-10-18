@@ -21,8 +21,8 @@ function retornaArrayInvertido(array) {
     const invertido = array.reverse()
     return invertido
 }
-const numero1 = retornaArrayInvertido(array)
-console.log(numero1)
+const num = retornaArrayInvertido(array)
+console.log(num)
 
 // EXERCÍCIO 03
 
@@ -89,10 +89,10 @@ console.log(numero)
 const num1 = 6
 const num2 = 10
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-    const maior
-    const menor
-    const booleano 
-    const diferenca 
+    let maior
+    let menor
+    let booleano 
+    let diferenca 
     if (num1>num2){
         maior = num1
         menor = num2
@@ -130,13 +130,27 @@ console.log (retornaNPrimeirosPares(n))
 
 
 // EXERCÍCIO 09
+const ladoA = 10
+const ladoB = 10
+const ladoC = 10
+let frase 
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+    if (ladoA === ladoB && ladoB === ladoC){
+        frase = "equilatero"
+    }
+    else if (ladoA !== ladoB && ladoB !== lado){
+        frase = "escaleno"
+    }
+    else {
+        frase = "isósceles"
+    }
+    return frase
 }
+console.log(classificaTriangulo(ladoA, ladoB, ladoC))
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+
 }
 
 // EXERCÍCIO 11
