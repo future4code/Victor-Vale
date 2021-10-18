@@ -27,21 +27,25 @@ console.log(numero1)
 
 const array = [6, 5, 4, 3, 2, 1]
 function retornaArrayOrdenado(array) {
-    const ordenado = array.sort()
+    const ordenado =(array.sort())
     return ordenado
 }
 console.log(retornaArrayOrdenado(array))
     
 // EXERCÍCIO 04
+
 const array = [1, 2, 3, 4, 5, 6, 7, 8]
-function retornaNumerosPares(array) {    
+function retornaNumerosPares(array) {   
     const arrayPar = []
-    for (let i=0; i<array.length; i++){
-        if(array[i] %2 === 0){
-            arrayPar = array[i]
-        }
-    }   
-    return arrayPar 
+    let i = 0 
+    while (i < array.length){
+        if (array[i] % 2 === 0){
+            let numeroPar = array[i]
+            arrayPar.push(numeroPar)
+        }   
+    i++
+    }
+    return arrayPar
 }
 console.log(retornaNumerosPares(array))
 
