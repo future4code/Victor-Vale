@@ -51,9 +51,21 @@ console.log(retornaNumerosPares(array))
 
 
 // EXERCÍCIO 05
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 function retornaNumerosParesElevadosADois(array) {
- 
+    const arrayPar = []
+    let i = 0 
+    while (i < array.length){
+        if (array[i] % 2 === 0){
+            let numeroPar = array[i]
+            arrayPar.push(numeroPar*numeroPar)
+        }   
+    i++
+    }
+
+    return arrayPar
 }
+console.log(retornaNumerosParesElevadosADois(array))
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
