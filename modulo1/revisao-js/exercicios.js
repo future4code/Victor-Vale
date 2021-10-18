@@ -13,14 +13,15 @@ const num = retornaTamanhoArray(array)
 console.log(num)
 
 // EXERCÍCIO 02
+
 const array = ["gato", "cachorro", "galinha", "passaro"]
 
 function retornaArrayInvertido(array) {
     const invertido = array.reverse()
     return invertido
 }
-const num = retornaArrayInvertido(array)
-console.log(num)
+const numero1 = retornaArrayInvertido(array)
+console.log(numero1)
 
 // EXERCÍCIO 03
 function retornaArrayOrdenado(array) {
