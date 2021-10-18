@@ -86,9 +86,31 @@ const numero = retornaMaiorNumero(array)
 console.log(numero)
 
 // EXERCÍCIO 07
+const num1 = 6
+const num2 = 10
 function retornaObjetoEntreDoisNumeros(num1, num2) {
-
+    const maior
+    const menor
+    const booleano 
+    const diferenca 
+    if (num1>num2){
+        maior = num1
+        menor = num2
+    }
+    else{
+        maior = num2
+        menor = num1 
+    }
+    booleano = maior % menor === 0 
+    diferenca = maior - menor 
+    const objeto = {
+        maiorNumero: maior,
+        maiorDvisivelPorMenor: booleano,
+        diferenca: diferenca
+    }
+    return objeto
 }
+console.log(retornaObjetoEntreDoisNumeros(num1, num2))
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
