@@ -8,10 +8,17 @@
     <link rel= "stylesheet" href= "style.css">
 </head>
 <body>
-    <div>
-        <span class="cabecalho">
-            <a href="https://github.com/victorfdovale?tab=projects">
+    <div class="cabecalho">
+        <span>
+            <a href="https://github.com/victorfdovale?tab=projects" target=_blank>
             <button>Projetos</button></a>
+            <a href="#sobre">
+                <button>Sobre</button>
+            </a>
+            <a href="#fale-comigo">
+                <button>Fale comigo</button>
+            </a>
+
         </span>
     </div>
     <div class="principal">
@@ -28,7 +35,7 @@
                 <img class="imagem1" src="https://img.olhardigital.com.br/wp-content/uploads/2019/07/20190722050633.jpg">
             </div>
         </div>
-        <div class="div3">
+        <div class="div3" id="sobre">
             <h2 class="sobre">Sobre mim</h2>
             <p class="descricao">Olá! Meu nome é Victor Ferreira do Vale e sou formado em Engenharia Mecânica.
                Desde que iniciei o curso de Engenharia tomei um certo gosto pela disciplina de programação,
@@ -41,19 +48,42 @@
                 <li>Universidade Vila Velha</li>
                 <li>Labenu</li>
             </ul>
+            <p class= "descricao">
+                Minhas habilidades técnicas e comportamentais são:
+            </p>
+            <ul>
+                <li>JavaScript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>C</li>
+                <li>Projetos e Desenhos Mecânicos</li>
+                <li>Controle dimensional</li>
+                <li>proatividade</li>
+            </ul>
             <img class="imagem2" src="https://lh3.googleusercontent.com/gzetu4ieorF93pZtO6m12FzhsuOlkw8niCD-MFk4t15fYtPSUScXf9fWt6Bnn9bkpcIbm4N94Asger4tDMT_xz0CeqO6MlzwS0YVNKIsVzQxAH7bC6yUiyPdpV9mGgRJqy4V6m5TWG-yKqNK9Kkufecc-NtXWUR4xnCSH3cSHtK8JGIdjMFWNP9R092A37mChNleBy8lhPRNrfx3sWYd52f2iooGUknZzYS_Jleao6yIfRTXY3IkzOVtN6E48ZeXBCEDpUh5uLumga1MJu8puf73uDb7jBt72nLmydjsw0VxpxT8wjOVH8JPwDj57KXzYKnqVRhTWCmKS8O3i93P-umTguSGBbh5s5HMbrR7YUPlSDUq_DUJ7dBbjEhERgK6H8IZ7z5VqtPP3LauGWAuJjG1vbC61Sh9SdNH00pugaJzLflyG2yoDsd0fqrRfuTZJgyze9-RavuKDscKNSHKf-HQLJKHcHTgNBmzTeyvUXSmdeqiZgofdQKLVwZCmuGA4yYLjfq_npR30ijfBjmMjXVkntRGStYQZ69LYX02oQIybbpIKAuhQTCmLQlfIHFa8jesiPqakZWBAiJxyWowtg58Gpiqpo_WEE2yUwhYyZmNZWy1UWnDa8HuyKx0pRaQ6N5jOjKM77ppI8hEsiQGQ1huVWSqoX3O_1RF0-ucEw2wJKFZFnPY3w1C8MKaPyenSvR8xPSR-W8JRrYTm8r-dKo=w1067-h600-no?authuser=0" alt="Victor">
+        </div>
+        <div id="fale-comigo">
+            <h3 class="titulo-formulario">Caso deseje receber mais informações, deixe seu e-mail</h3>
+            <form>
+                <label for="Nome">Nome: </label>
+                <input type="text" name="Nome" id="Nome">
+                <label for="email">E-mail</label>
+                <input type="email" name="Email" id="email">
+                <input type="submit">
+            </form>
         </div>
         <div class="div4">
             <h3>você pode me seguir nas minhas redes sociais!</h3>
         </div>
+        
         <div class="div5">
-            <a href="https://www.facebook.com/victor.ferreira.338658">
+            <a href="https://www.facebook.com/victor.ferreira.338658" target=_blank>
                 <img class="imagem3" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAb1BMVEU6VZ////82Up4zUJ1UbKx4ibswTpyMmsQ5V6EtTJupss8nSJnN0+WVosgqSpo4U56eqcyDksDj5vBwgbb3+PxFXqNabqt9jb3S2OhidbC9xdy3v9l0hLjZ3etLY6bq7fTEyt4dQpdJYqekrs2uttK97JEgAAADFUlEQVR4nO3c2XLiMBBAUUZmM3IsFsNgSIAk/P83TsLzjCNbI3c3de9rqlw+BV7VZDIhIiIiIiIiIiIiIiIiIlJeCM4VxbzsrJDey8G50s/3h91ss3jp7LdJYii8262rbfPr545eem/753y9qWJwjypzwqJuT7E6i0JX7459fOaEvn3r5zMmLPy5r8+W0L9Gn15MCkO9GuAzJHSh9xFoS1hcrsOAVoTzdsghaEhYTAcDbQjdfjjQhDAshx6DRoShrhKAFoR+nQI0ICzaJKABYZlyEFoQ1p9pQPVCd0m4UJgQ+lsiULvQXVKB2oW+1ysZg8KwTAYqF5ZpF3sDQr99cqFLvJ3RL0y+2usXDnw1Y0YYUh58TQiL3X8Aql57Kvschs3xdF/9pftC8fphj3vSalZ6X5tbA/axJ5rtzhdBem+HVEeeaKq55s+po1DHAW/vJj+/yfdifdxX1OYX9LuwjxIejH5Fv3LTGOBJ8eXup+KEH056P4cXJby+S+9mQlHCUy29mwlFCddz6d1MKEq4sXsmjRTOEGoOIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQR27+78qYucRX37GFR7Jrb65ddBQz1Hbv2sCjpSixvEcgEitlhcN+cNenRnZxagThm+wK6ghC4TXiEYSr8tmFwstvIwhb2XX+EYR72St+fmEj6htDuBW+a8svPArPauQXnp9e+CI8jZJfKP38mF8ofDnML2wuwsOn2YVX6ena7MKt9PRpduHt6YUr6eHM7MKF9HBmduGr9OvU7MKp9BR4bmEjDcwulJ9zzy2U/+1hbqH0s1N+4afsq8QRhPKT/LmFB+kb7+xC6Tua7ELhdacRhOLPTtmFCv7ZQOY14LP4xWISlh2FqFkM17UF8VPpF7Hjb3HTJl2nSwXAzp5jnqYrhAj1hxCh/hAi1B9ChPpDiFB/CBHqDyFC/SFEqD+ECPWHEKH+ECLUH0KE+kOIUH8IEeoPIUL9IUSoP4QI9YcQof4QItQfQoT6Q4hQfwgR6g8hQv0hRKg/hAj1hxCh/hAi1B9ChD36A+1ASVvVoq0WAAAAAElFTkSuQmCC" alt="facebook">
             </a>
-            <a href="https://www.instagram.com/victorfdovale/">
+            <a href="https://www.instagram.com/victorfdovale/" target=_blank>
                 <img class="imagem4" src="https://imagepng.org/wp-content/uploads/2017/08/instagram-icone-icon-1.png" alt="instagram">
             </a>
-            <a href="https://www.linkedin.com/in/victor-ferreira-07a907158/">
+            <a href="https://www.linkedin.com/in/victor-ferreira-07a907158/" target=_blank>
                 <img class="imagem5" src=data:image/png;base64,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>
             </a>
 
