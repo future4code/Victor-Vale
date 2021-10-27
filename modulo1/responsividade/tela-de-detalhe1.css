@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: coral;
+}
+.video1{
+    align-items: center;
+    text-align: center;
+}  
+
+footer{
+    text-align: center;
+    background-color: coral;
+}
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* celulares */
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .titulo{
+        font-size: 20px;
+    }
+
+   video{
+       width: 15rem;
+   }
+}
+
+
+
+
+
