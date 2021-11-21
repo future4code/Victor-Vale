@@ -1,11 +1,15 @@
 import React from "react"
 import axios from "axios"
 
-export default class TelaPlaylists extends React.Component{
+export default class App extends React.Component{
     state = {
             playlists: [],
             nome: "",
-            detalhes:[]
+            detalhes:[],
+            faixa: [],
+            musica: "",
+            banda: "",
+            link: ""
         }
 
         componentDidMount() {
@@ -78,23 +82,72 @@ export default class TelaPlaylists extends React.Component{
                 }
             }).then((res) => {
                 this.setState({detalhes: res.data})
-                console.log(res.data)
+                console.log("Essa playlist tem" ,res.data.result.quantity, "musicas")
+                console.log("músicas:", res.data.result.tracks)
             }).catch((err) => {
                 console.log(err)
-            }) 
-        }
-       
+            })
+            
+            if(this.state.mostraDetalhes === false){
+                return this.setState({mostraDetalhes: true})
+            } else{
+                return this.setState({mostraDetalhes: false})
+            }
 
+
+
+        }
+
+        handleMusica = (event) => {
+            this.setState ({musica: event.target.value})
+        }
+        handleBanda = (event) => {
+            this.setState ({banda: event.target.value})
+        }
+        handleLink = (event) => {
+            this.setState ({link: event.target.value})
+        }
+        
+        adcionarMusicas = (id) => {
+            const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${id}/tracks`
+            const body = {
+                name: this.state.musica,
+                artist: this.state.banda,
+                url: this.state.link
+            }
+            axios.post(url, body, {
+                headers:{
+                    Authorization: "victor-vale-carver"
+                }
+            }).then((res) => {
+                alert("Música adicionada com sucessso")
+                this.setState({faixa: res.data.result})
+            }).catch((err) => {
+                console.log(err.data)
+                alert("Erro ao adicionar música")
+            })
+            this.setState({musica: ""})
+            this.setState({banda: ""})
+            this.setState({link: ""})
+        }
+        
+     
     
     render(){
-        console.log("playlists", this.state.playlists)
+        
         const listaPlaylists = this.state.playlists.map((x) => {
-            return <div key={x.id}>
+            return <li key={x.id}>
                 {x.name}
                 <button onClick={() => this.deletarPlaylist(x.id)}>Deletar Playlist</button>
                 <button onClick = {() => this.pegarInformacoes(x.id)}> Ver informações </button>
-                <button>Adicionar Músicas</button> 
-                </div>
+                <div>
+                    <button onClick = {()=> this.adcionarMusicas(x.id)}>Adicionar Músicas</button>
+                    <input placeholder = "Música" onChange = {this.handleMusica}/>
+                    <input placeholder = "Artista" onChange = {this.handleBanda}/>
+                    <input placeholder = "link" onChange = {this.handleLink}/>
+                </div> 
+                </li>
+        
         })
         
         return (
@@ -102,7 +155,8 @@ export default class TelaPlaylists extends React.Component{
                 <input placeholder = "Nome da playlist" value = {this.state.nome} onChange = {this.handleNome}></input>
                 <button onClick = {this.criarPlaylist}>Criar</button> 
                 <h2>Lista de Playlists</h2>
-                <h4>{listaPlaylists}</h4>
+                <ul>{listaPlaylists}</ul>
+                
 
             </div>
         )
