@@ -8,11 +8,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin:0;
     padding: 0;
-    width: 40vw;
-    min-height: 70vh;
+    width: 25vw;
+    min-height: 80vh;
     border: 1px solid black;
-    margin-left: 25%;
-    margin-top: 5%;
+    margin-left: 35%;
+    margin-top: 4%;
     
   }
 `

@@ -1,23 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ContainerHeader = styled.div`
-    border: 1px solid black;
+const ContainerHeader = styled.div` 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: gray;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+ 
 `
-
+const CardButton = styled.button`
+    border: white;
+    background-color: white;
+    margin-right: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    &:hover {
+    background-color: palevioletred;
+    color: white;
+    
+  }
+`
 
 
 const Header = (props) => {
     return (
         <ContainerHeader>
-             <h3>Astromatch</h3>
+             <h3>Astromatch &#10084;</h3>
              <div>
-                <button onClick = {() => props.changePage('Home')}>Home</button>
-                <button onClick ={() => props.changePage('MatchesPage')}>Seus Matches</button>
+                <CardButton onClick = {() => props.changePage('Home')}>Home</CardButton>
+                <CardButton onClick ={() => props.changePage('MatchesPage')}>Seus Matches</CardButton>
              </div>
             
         </ContainerHeader>
