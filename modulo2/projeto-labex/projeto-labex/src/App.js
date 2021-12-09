@@ -29,15 +29,15 @@ function App () {
           <LoginPage/>
         </Route>
 
-        <Route exact path={'/admin'}>
+        <Route exact path={'/admin/trips/list'}>
           <Admin/>
         </Route>    
 
-        <Route exact path={'/details/:id'}>
+        <Route exact path={'/admin/trips/:id'}>
           <TripDetailPage/>
         </Route>
 
-        <Route exact path={'/create'}>
+        <Route exact path={'/admin/create'}>
           <CreateTripPage/>
         </Route>
 

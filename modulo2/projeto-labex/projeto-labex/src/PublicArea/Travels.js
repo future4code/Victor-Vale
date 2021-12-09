@@ -23,7 +23,7 @@ function Travels(props) {
   const [tripsList, isLoading, error] = useRequestData('https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor/trips')
   const list = tripsList.map((x) => {
     return(
-      <CardTrip key = {x.id} goToFormPage = {props.goToFormPage}>
+      <CardTrip key = {x.id}>
         <h2>{x.name}</h2>
         <h4>{x.description}</h4>
         <h4>Planeta: {x.planet}</h4>
@@ -37,7 +37,7 @@ function Travels(props) {
   return (
     <div>
       <h1>Viagens Disponíveis</h1>
-      <button onClick = {() => props.changePage('Home')}>Voltar para Home</button>
+      <button onClick = {()=> history.push('/')}>Voltar para Home</button>
       <ContainerDiv>
         {list}
       </ContainerDiv>

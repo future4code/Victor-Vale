@@ -10,10 +10,10 @@ function Form(props) {
   const [application, setApplication] = useState('')
   const [profession, setProfession] = useState('')
   const [country, setCountry] = useState('')
-  console.log('Esse é Id passado', props.tripId)
   const history = useHistory()
   const params = useParams()
   console.log(params)
+  console.log('o params.id é', params.id)
   
   const applyForm = () => {
      const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/victor/trips/${params.id}/apply`
