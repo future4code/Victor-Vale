@@ -2,9 +2,23 @@ import React from 'react'
 import {useState, useEffect} from 'react'
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
+import styled from 'styled-components'
+
+const ContainerCards = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+`
+const CardDiv = styled.div`
+  border: 1px solid black;
+  text-align: center;
+`
 
 
-function TripDetailPage(props) {
+function TripDetailPage() {
+  const [trip, setTrip] = useState({})
+  const [candidate,setCandidate] = useState([])
   const history = useHistory()
   const params = useParams()
   console.log('Aqui é os params', params)
@@ -21,6 +35,9 @@ function TripDetailPage(props) {
     axios.get(url, headers)
     .then((res)=>{
       console.log('página detalhes deu bom', res)
+      setTrip(res.data.trip)
+      setCandidate(res.data.trip.candidates)
+     
     })
     .catch((err)=>{
       console.log('página detalhes deu ruim ==>', err.response.data)
@@ -28,12 +45,41 @@ function TripDetailPage(props) {
 
   },[])
 
+  
+
+  console.log('Aqui são os candidates', candidate)
+
+  const candidatesList = candidate.map((x) => {
+    return(
+      <CardDiv key={x}>
+        <h3>{x.name}</h3>
+        <h4>{x.age}</h4>
+        <h4>{x.applicationText}</h4>
+        <h4>{x.profession}</h4>
+        <h4>{x.country}</h4>
+        <button>Aprovar</button>
+        <button>Reprovar</button>
+      </CardDiv>
+    )
+
+  })
 
   return (
     <div>
-        <h1>Detalhes da viagem</h1>
-        <button onClick = {() => history.push('/')}>Voltar para Home</button>
-        <button onClick = {() => history.push('/admin/trips/list')}>Administrativo</button>
+      <h1>Detalhes da viagem</h1>
+      <button onClick = {() => history.push('/')}>Voltar para Home</button>
+      <button onClick = {() => history.push('/admin/trips/list')}>Administrativo</button>
+      <h3>{trip.name}</h3>
+      <h4>{trip.planet}</h4>
+      <h4>{trip.description}</h4>
+      <h4>Dia: {trip.date}</h4>
+      <h4>Duração: {trip.durationInDays} dias</h4>
+      <h2>Candidatos</h2>
+      <ContainerCards>
+        {candidatesList}
+      </ContainerCards>
+        
+
     </div>
   );
   
