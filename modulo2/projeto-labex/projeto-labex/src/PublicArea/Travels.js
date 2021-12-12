@@ -3,18 +3,32 @@ import { useRequestData } from '../Hooks/CustomHooks';
 import styled from 'styled-components';
 import { useHistory } from "react-router-dom"
 
+const ContainerHome = styled.div`
+  background: lightgray;
+  height: 50px;
+  margin-bottom: 15px;
+  padding: 5px;
+`
+const ContainerTitulo = styled.h2`
+  margin-top: 10px;
+`
+
 const CardTrip = styled.div`
-  border: 1px solid black;
   padding: 10px;
   text-align: center;
+  background-color: white;
+  -webkit-box-shadow: 7px 7px 20px 0px #000000; 
+  box-shadow: 7px 7px 20px 0px #000000;
+  border-radius: 20px;
  
 `
 const ContainerDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 20px;
-  row-gap: 20px;
+  gap: 40px;
   margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 
 `
 
@@ -36,7 +50,10 @@ function Travels(props) {
 
   return (
     <div>
-      <h1>Viagens Disponíveis</h1>
+      <ContainerHome>
+         <ContainerTitulo>Viagens Disponíveis</ContainerTitulo>
+      </ContainerHome>
+     
       <button onClick = {()=> history.push('/')}>Voltar para Home</button>
       <ContainerDiv>
         {list}

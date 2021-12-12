@@ -4,15 +4,47 @@ import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
 import styled from 'styled-components'
 
+const Container = styled.div`
+  background: lightgray;
+  height: 50px;
+  margin-bottom: 15px;
+  padding: 5px;
+`
+const ContainerTitulo = styled.h2`
+  margin-top: 10px;
+`
+const Details = styled.div`
+  background: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  border-radius: 20px;
+  -webkit-box-shadow: 7px 7px 20px 0px #000000; 
+  box-shadow: 7px 7px 20px 0px #000000;
+`
+
 const ContainerCards = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 35px;
+  margin: 35px;
 
 `
 const CardDiv = styled.div`
-  border: 1px solid black;
+  padding: 10px;
   text-align: center;
+  background-color: white;
+  -webkit-box-shadow: 7px 7px 20px 0px #000000; 
+  box-shadow: 7px 7px 20px 0px #000000;
+  border-radius: 20px;
+ 
+`
+const ContainerCandidatos = styled.h2`
+  background: white;
+  margin-left: 45%;
+  margin-right: 45%;
 `
 
 
@@ -66,15 +98,21 @@ function TripDetailPage() {
 
   return (
     <div>
-      <h1>Detalhes da viagem</h1>
+      <Container>
+        <ContainerTitulo>Detalhes da viagem</ContainerTitulo>
+      </Container>
+      
       <button onClick = {() => history.push('/')}>Voltar para Home</button>
       <button onClick = {() => history.push('/admin/trips/list')}>Administrativo</button>
-      <h3>{trip.name}</h3>
-      <h4>{trip.planet}</h4>
-      <h4>{trip.description}</h4>
-      <h4>Dia: {trip.date}</h4>
-      <h4>Duração: {trip.durationInDays} dias</h4>
-      <h2>Candidatos</h2>
+      <Details>
+        <h3>{trip.name}</h3>
+        <h4>{trip.planet}</h4>
+        <h4>{trip.description}</h4>
+        <h4>Dia: {trip.date}</h4>
+        <h4>Duração: {trip.durationInDays} dias</h4>
+      </Details>
+      <ContainerCandidatos>Candidatos</ContainerCandidatos>
+      
       <ContainerCards>
         {candidatesList}
       </ContainerCards>

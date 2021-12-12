@@ -3,6 +3,28 @@ import {useState, useEffect} from 'react'
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
 import {useParams} from 'react-router-dom'
+import styled from 'styled-components'
+
+const ContainerHome = styled.div`
+  background: lightgray;
+  height: 50px;
+  margin-bottom: 15px;
+  padding: 5px;
+`
+const ContainerTitulo = styled.h2`
+  margin-top: 10px;
+`
+const ContainerInputs = styled.div`
+  display: grid;
+  row-gap: 20px;
+  margin-top: 40px;
+  margin-right: 30%;
+  margin-left: 30%;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  
+`
 
 function Form(props) {
   const [name, setName] = useState('')
@@ -66,16 +88,19 @@ function Form(props) {
   
   return (
     <div>
-      <h1>Formulário</h1>
+      <ContainerHome>
+        <ContainerTitulo>Formulário</ContainerTitulo>
+      </ContainerHome>
       <button onClick = {()=> history.push('/')}>Voltar para Home</button>
-      <div>
+      <ContainerInputs>
+        <h2>Informe seus dados</h2>
         <input placeholder = 'Nome' value={name} onChange ={handleName} ></input>
         <input placeholder = 'Idade' value={age} onChange ={handleAge} ></input>
         <input placeholder = 'Texto de aplicação' value={application} onChange ={handleApplication} ></input>
         <input placeholder = 'Profissão' value={profession} onChange ={handleProfession} ></input>
         <input placeholder = 'País' value={country} onChange ={handleCountry} ></input>
         <button onClick = {applyForm}>Se inscrever</button>
-      </div>
+      </ContainerInputs>
       
     </div>
   );

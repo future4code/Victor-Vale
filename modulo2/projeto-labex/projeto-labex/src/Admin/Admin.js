@@ -5,19 +5,38 @@ import { useRequestData } from '../Hooks/CustomHooks';
 import styled from 'styled-components';
 import axios from 'axios';
 
+const ContainerHome = styled.div`
+  background: lightgray;
+  height: 50px;
+  margin-bottom: 15px;
+  padding: 5px;
+`
+const ContainerTitulo = styled.h2`
+  margin-top: 10px;
+`
+
 const CardTrip = styled.div`
-  border: 1px solid black;
   padding: 10px;
   text-align: center;
+  background: white;
+  border-radius: 20px;
+  -webkit-box-shadow: 7px 7px 20px 0px #000000; 
+  box-shadow: 7px 7px 20px 0px #000000;
  
 `
 const ContainerDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 20px;
-  row-gap: 20px;
-  margin-top: 20px;
+  column-gap: 30px;
+  row-gap: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 
+`
+const ContainerButton = styled.div`
+  display: flex;
+  column-gap: 20px;
+  justify-content: center;
 `
 
 
@@ -52,8 +71,10 @@ function Admin() {
       <CardTrip key = {x.id}>
         <h2>{x.name}</h2>
         <h4>Data: {x.date}</h4>
-        <button onClick={()=> deleteTrip(x.id)}>Deletar viagem</button>
-        <button onClick = {()=> history.push(`/admin/trips/${x.id}`)}>Ver Detalhes dessa viagem</button>
+        <ContainerButton>
+          <button onClick={()=> deleteTrip(x.id)}>Deletar viagem</button>
+          <button onClick = {()=> history.push(`/admin/trips/${x.id}`)}>Ver Detalhes dessa viagem</button>
+        </ContainerButton>
       </CardTrip>
     )
   })
@@ -61,9 +82,11 @@ function Admin() {
 
     return (
     <div>
-        <h1>Administrativo</h1>
-        <button onClick = {()=> history.push('/')}>Voltar para Home</button>
-        <button onClick = {() => history.push('/admin/create')}>Criar viagens</button>
+      <ContainerHome>
+        <ContainerTitulo>Administrativo</ContainerTitulo>
+      </ContainerHome>
+          <button onClick = {()=> history.push('/')}>Voltar para Home</button>
+          <button onClick = {() => history.push('/admin/create')}>Criar viagens</button>
         <ContainerDiv>
         {list}
       </ContainerDiv>

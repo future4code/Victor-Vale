@@ -2,7 +2,27 @@ import React from 'react'
 import {useState} from 'react'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
+import styled from 'styled-components';
 
+const Container = styled.div`
+  background: lightgray;
+  height: 50px;
+  margin-bottom: 15px;
+  padding: 5px;
+`
+const ContainerTitulo = styled.h2`
+  margin-top: 10px;
+`
+const ContainerInputs = styled.div`
+  display: grid;
+  gap: 20px;
+  margin-top: 70px;
+  margin-left: 30%;
+  margin-right: 30%;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+`
 
 function CreateTripPage() {
   const history = useHistory()
@@ -57,10 +77,12 @@ function CreateTripPage() {
 
   return (
     <div>
-        <h1>Crie Viagens aqui</h1>
+      <Container>
+        <ContainerTitulo>Crie Viagens aqui</ContainerTitulo>
+      </Container>
         <button onClick = {() => history.push('/')}>Voltar para Home</button>
         <button onClick = {() => history.push('/admin/trips/list')}>Administrativo</button>
-        <div>
+        <ContainerInputs>
           <input placeholder='nome' value = {name} onChange={handleName}></input>
           <select value = {planet} onChange={handlePlanet}>
             <option>Escolha um planeta</option>
@@ -75,7 +97,7 @@ function CreateTripPage() {
           <input placeholder='Data' type='date' value={date} onChange={handleDate}></input>
           <input required type='number' placeholder='Duração em dias' value={duration} onChange={handleDuration}></input>
           <button onClick={createTrip}>Criar viagem</button>
-        </div>
+        </ContainerInputs>
     </div>
   );
 }

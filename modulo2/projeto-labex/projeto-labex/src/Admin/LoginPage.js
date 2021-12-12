@@ -3,13 +3,30 @@ import {useHistory} from 'react-router-dom'
 import styled from 'styled-components'
 import axios from 'axios'
 
+const ContainerAdmin = styled.div`
+  background: lightgray;
+  height: 50px;
+  margin-bottom: 15px;
+  padding: 5px;
+  margin-top: 0;
+
+`
+const ContainerTitle = styled.h2`
+  margin-top: 8px;
+`
 
 const ContainerLogin = styled.div`
-  margin-top: 20px;
+  margin-top: 80px;
   display: grid;
   row-gap: 10px;
-  margin-left: 0%;
-  margin-right: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  -webkit-box-shadow: 7px 7px 20px 0px #000000; 
+  box-shadow: 7px 7px 20px 0px #000000;
+
 `
 const ButtonLogin = styled.button`
   width: 100px;
@@ -52,7 +69,9 @@ function LoginPage() {
 
   return (
     <div>
-        <h1>login Administrativo</h1>
+        <ContainerAdmin>
+          <ContainerTitle>Login Administrativo</ContainerTitle>
+          </ContainerAdmin>
         <button onClick = {() => history.push('/')}>Voltar para Home</button>
         <ContainerLogin>
           <input placeholder='E-mail' value = {email} onChange={handleEmail} />
