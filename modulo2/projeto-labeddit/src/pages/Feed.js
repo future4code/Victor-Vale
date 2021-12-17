@@ -73,7 +73,6 @@ const Feed = () => {
                         label = 'Título'
                         fullWidth
                         margin = 'normal'
-                        required
                         type = {'text'}/>
             
                     <TextField
@@ -83,12 +82,11 @@ const Feed = () => {
                         label = 'Corpo'
                         fullWidth
                         margin = 'normal'
-                        required
                         type = {'text'}/>
                     <Button
                             type = {'submit'}
                             color = {'primary'}
-                            variant = {'text'}
+                            variant = {'contained'}
                             margin = {'normal'}>
                         Compartilhar</Button>
                 </form>

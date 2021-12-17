@@ -38,7 +38,7 @@ const CardFeed = (props) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button onClick={onClickCard(props.id)} color = {'primary'} variant = {'text'} size="small">Ver Comentários</Button>
+        <Button onClick={(props.onClick)} color = {'primary'} variant = {'contained'} size="small">Ver Comentários</Button>
       </CardActions>
     </StyledCard>
   );
