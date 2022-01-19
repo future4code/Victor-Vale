@@ -26,7 +26,7 @@ const CardButton = styled.button`
 const Header = (props) => {
     return (
         <ContainerHeader>
-             <h3>Astromatch &#10084;</h3>
+             <h3>ValleyMatch &#10084;</h3>
              <div>
                 <CardButton onClick = {() => props.changePage('Home')}>Home</CardButton>
                 <CardButton onClick ={() => props.changePage('MatchesPage')}>Seus Matches</CardButton>
