@@ -21,11 +21,48 @@ app.listen(3003, () => console.log('servidor disponível na porta 3003'))
 // })
 
 app.get('/playlists/search', (req: Request, res: Response) => {
-    const playlistName = req.query.name
-    if(!playlistName){
+    const queriedName = req.query.name
+    if(!queriedName){
         res.status(400).send('faltou a query name!')
     }
-    res.send({playlistName})
+
+    const searchResult = []
+
+    for(let user of users){
+        for(let playlist of user.playlists){
+            if(playlist.name.includes(queriedName)){
+                searchResult.push({
+                    id: playlist.id,
+                    name: playlist.name
+                })
+            }
+        }
+    }
+    res.send({
+        result:{
+            quantity: searchResult.length,
+            list: searchResult
+        }
+    })
+
+})
+
+app.post('/playlists', (req: Request, res: Response) => {
+    const playlistName = req.body.name
+    const userIdToAdd = req.headers.authorization
+
+    for(let i = 0 ; i < users.length; i++){
+        if(users[i].id === userIdToAdd){
+            users[i].playlists.push({
+                id: Date.now().toString(),
+                name: playlistName,
+                tracks:[]
+            })
+        }
+    }
+
+    res.send({users})
+
 
 })
 
