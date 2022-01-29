@@ -66,3 +66,11 @@ app.post('/playlists', (req: Request, res: Response) => {
 
 })
 
+app.post('/playlists/:playlistId/tracks', (req: Request, res: Response) => {
+    const playlistIdToAdd = req.params.playlistId
+    const userIdToAdd = req.headers.authorization
+    const {name, artist, url} = req.body
+
+    res.send({playlistIdToAdd, userIdToAdd, name, artist, url})
+})
+
