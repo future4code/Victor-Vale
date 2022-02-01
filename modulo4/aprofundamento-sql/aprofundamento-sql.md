@@ -66,3 +66,5 @@ b) ALTER TABLE Movie CHANGE rating rating FLOAT;
 c) UPDATE Movie SET playing_limit_date = "2020-12-31" WHERE id = "001
 
 d) DELETE FROM Movie WHERE id = "001"
+
+7
