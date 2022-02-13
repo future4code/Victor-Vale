@@ -37,3 +37,4 @@ app.get('/products', getProducts)
 //EndPoints relacionados a compras
 app.post('/purchases', registerPurchases)
 app.get("/users/:user_id/purchases", getUserPurchases)
+
