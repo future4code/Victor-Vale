@@ -76,4 +76,4 @@ const bart: Character = new Character('bart', GENDERCHARACTER.MALE, 60, 'fica em
 const magie: Character = new Character('magie', GENDERCHARACTER.FAMALE, 60, 'fica em casa e beber duff');
 const marge: Character = new Character('marge', GENDERCHARACTER.FAMALE, 60, 'fica em casa e beber duff');
 
-// public private protected
+// public private protecte
