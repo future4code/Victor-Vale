@@ -1,0 +1,75 @@
+
+header{
+    background-color:  #00b8e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+input{
+    margin: 2px;
+    padding: 1rem;
+    border: none ;
+    outline: none ;
+}
+button{
+    padding: 0.8rem 3rem 0.8rem 2rem;
+    color: white;
+    background-color: transparent;
+    border: solid white 2px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 2px;
+}
+button:hover{
+    background-color: white;
+    color:  #00b8e2;
+}
+.containerData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem 2rem 1rem;
+    color: rgb(90, 90, 90);
+}
+h1{  
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+h2{
+    font-weight: 500;
+}
+.containerTable{
+    border-collapse: collapse;
+
+}
+th, tr, td{
+    border: solid 1px rgb(120, 120, 120);
+}
+td{
+    color: rgb(120, 120, 120);
+}
+th{
+    color: rgb(90, 90, 90);
+}
+.row-number{
+    padding: 0.8rem 1rem;
+}
+.row-name{
+    padding:  0.8rem 0.4rem ;
+    text-align: start;
+    width: 200px;
+}
+.row-participation{
+    padding:  0.8rem 0.4rem ;
+    text-align: center;
+}
+.tableAndChart{
+    display:flex;
+    margin-left: 15%;
+}
